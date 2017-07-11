@@ -107,14 +107,14 @@ pub struct MergeRequest {
     pub work_in_progress: bool,
     pub milestone: Option<::Milestone>,
     pub merge_when_build_succeeds: bool,
-    pub merge_status: Status,
+    pub merge_status: Option<Status>,
     pub sha: Option<String>,
     pub merge_commit_sha: Option<String>,
-    pub subscribed: bool,
-    pub user_notes_count: i64,
+    pub subscribed: Option<bool>,
+    pub user_notes_count: Option<i64>,
     pub should_remove_source_branch: Option<bool>,
     pub force_remove_source_branch: Option<bool>,
-    pub web_url: String
+    pub web_url: Option<String>
 }
 
 pub type MergeRequests = Vec<MergeRequest>;

@@ -231,7 +231,7 @@ pub struct Project {
     pub created_at: String,  // FIXME: Date instead?
     pub last_activity_at: String,  // FIXME: Date instead?
     pub shared_runners_enabled: bool,
-    pub lfs_enabled: bool,
+    pub lfs_enabled: Option<bool>,
     pub creator_id: i64,
     pub namespace: ProjectNamespace,
     pub forked_from_project: Option<ProjectForkedFrom>,
@@ -240,10 +240,10 @@ pub struct Project {
     pub forks_count: i64,
     pub open_issues_count: Option<i64>,
     pub runners_token: Option<String>,
-    pub public_builds: bool,
-    pub shared_with_groups: Vec<ProjectSharedWithGroup>,
-    pub only_allow_merge_if_build_succeeds: bool,
-    pub request_access_enabled: bool,
+    pub public_builds: Option<bool>,
+    pub shared_with_groups: Option<Vec<ProjectSharedWithGroup>>,
+    pub only_allow_merge_if_build_succeeds: Option<bool>,
+    pub request_access_enabled: Option<bool>,
     pub only_allow_merge_if_all_discussions_are_resolved: Option<bool>,  // FIXME: Is bool the proper type?
     pub approvals_before_merge: Option<i64>,
     pub permissions: Option<ProjectPermissions>,
